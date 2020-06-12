@@ -12,6 +12,7 @@ class DosesController < ApplicationController
        redirect_to @cocktail, notice: "Dose was created successfully"
      else
       render :new
+    end
   end
 
   def destroy
@@ -26,3 +27,4 @@ class DosesController < ApplicationController
     params.require(:dose).permit(:description, :ingredient_id)
   end
 end
+
