@@ -1,7 +1,11 @@
 <%= @cocktail.name %>
-
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
 <% @cocktail.doses.each do |dose| %>
 <%= dose.description %> of
 <%= dose.ingredient.name %>
 <%= link_to 'destroy', dose_path(dose), method: :delete, data: { confirm: 'are you sure?'} %>
 <% end %>
+
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key %>')">
+  blabla
+</div>
